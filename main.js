@@ -237,6 +237,7 @@ function logError(message, type = "error") {
   } else {
     errorLog.innerHTML = logEntry + errorLog.innerHTML;
   }
+
   if (type === "error") {
     errorCount++;
     updateStats();

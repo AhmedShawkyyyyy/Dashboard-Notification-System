@@ -10,8 +10,10 @@
   <body data-theme="light">
     <div class="container">
       <header class="header">
-        <h1>Dashboard System</h1>
-        <button class="theme-toggle">🌙 Dark Mode</button>
+        <h1>Dashboard Notifications System</h1>
+        <button class="theme-toggle" onclick="toggleTheme()">
+          🌙 Dark Mode
+        </button>
       </header>
 
       <div class="stats-grid">
@@ -42,7 +44,7 @@
           <input
             type="text"
             class="search-field"
-            placeholder="Type to search with Debounce Search..."
+            placeholder="Type to search with debounce..."
             id="searchInput"
           />
           <div class="search-status" id="searchStatus"></div>
@@ -59,16 +61,16 @@
               color: rgba(255, 255, 255, 0.7);
             "
           >
-            <p style="font-size: 1.2rem">No notifications yet</p>
+            <p style="font-size: 1.2rem">✨ No notifications yet</p>
             <p style="margin-top: 10px; opacity: 0.8">
-              Launch your first notification
+              Launch your first notification to see the magic!
             </p>
           </div>
         </div>
       </div>
 
       <div class="error-section">
-        <h3>Error Testing Lab</h3>
+        <h3>⚡ Error Testing Lab</h3>
         <div style="text-align: center">
           <button class="error-btn" onclick="simulateAsyncError()">
             Async Error
@@ -80,7 +82,64 @@
         </div>
         <div class="error-log" id="errorLog"></div>
       </div>
-
+      <div class="container">
+        <div
+          style="
+            margin-top: 50px;
+            padding: 30px;
+            background: var(--bg-secondary);
+            border-radius: 15px;
+          "
+        >
+          <h3 style="color: var(--accent); margin-bottom: 20px">
+            📋 Implementation Details
+          </h3>
+          <ul style="color: var(--text-secondary); line-height: 2">
+            <li>✅ Custom Events with addEventListener/dispatchEvent</li>
+            <li>✅ Manual Debounce implementation (500ms delay)</li>
+            <li>✅ Manual Throttle implementation (1s interval)</li>
+            <li>✅ Async/Await error handling with try/catch</li>
+            <li>✅ Global error handlers (window.onerror)</li>
+            <li>✅ LocalStorage for notification history</li>
+            <li>✅ Light/Dark theme toggle</li>
+            <li>✅ Notification counter</li>
+            <li>✅ Debounce Search</li>
+            <li>✅ Errors Counter</li>
+          </ul>
+          <div
+            style="
+              margin-top: 30px;
+              padding: 20px;
+              background: var(--bg-card);
+              border-radius: 10px;
+              backdrop-filter: blur(20px);
+              border: 1px solid var(--border);
+            "
+          >
+            <p style="color: var(--text-secondary)">
+              <strong style="color: var(--accent)">Scroll down</strong> to test
+              the throttled scroll position logger. Try the search field to see
+              debouncing in action. Click the notification button to dispatch
+              custom events. Test error handling with the error simulation
+              buttons.
+            </p>
+          </div>
+        </div>
+        <div
+          style="
+            margin-top: 30px;
+            background: linear-gradient(var(--bg-secondary), var(--bg-card));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <p style="color: var(--text-secondary); font-size: 1.2em">
+            Keep scrolling to test the scroll logger! 📏
+          </p>
+        </div>
+      </div>
       <div class="scroll-area">
         <p>Scroll down to test the position tracker!</p>
       </div>
@@ -90,8 +149,6 @@
         <div class="scroll-position" id="scrollPosition">Y: 0px</div>
       </div>
     </div>
-
-    <script></script>
   </body>
   <script src="main.js"></script>
 </html>
