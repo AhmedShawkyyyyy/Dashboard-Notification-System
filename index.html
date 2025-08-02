@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Notification System</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+  </head>
+  <body data-theme="light">
+    <div class="container">
+      <header class="header">
+        <h1>Dashboard System</h1>
+        <button class="theme-toggle">🌙 Dark Mode</button>
+      </header>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="totalNotifications">0</div>
+          <div class="stat-label">Total Notifications</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="searchCount">0</div>
+          <div class="stat-label">Search Queries</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="errorCount">0</div>
+          <div class="stat-label">Errors Caught</div>
+        </div>
+      </div>
+
+      <div class="main-flex">
+        <div class="glass-card notification-trigger">
+          <h3 class="card-title">Notification Center</h3>
+          <button class="trigger-btn" onclick="triggerNotification()">
+            Launch Notification
+          </button>
+        </div>
+
+        <div class="glass-card">
+          <h3 class="card-title">Debounce Search</h3>
+          <input
+            type="text"
+            class="search-field"
+            placeholder="Type to search with Debounce Search..."
+            id="searchInput"
+          />
+          <div class="search-status" id="searchStatus"></div>
+        </div>
+      </div>
+
+      <div class="glass-card notifications-history">
+        <h3 class="card-title">📚 Notification Timeline</h3>
+        <div id="notificationsList">
+          <div
+            style="
+              text-align: center;
+              padding: 60px;
+              color: rgba(255, 255, 255, 0.7);
+            "
+          >
+            <p style="font-size: 1.2rem">No notifications yet</p>
+            <p style="margin-top: 10px; opacity: 0.8">
+              Launch your first notification
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="error-section">
+        <h3>Error Testing Lab</h3>
+        <div style="text-align: center">
+          <button class="error-btn" onclick="simulateAsyncError()">
+            Async Error
+          </button>
+          <button class="error-btn" onclick="simulateSyncError()">
+            Sync Error
+          </button>
+          <button class="error-btn" onclick="clearErrorLog()">Clear Log</button>
+        </div>
+        <div class="error-log" id="errorLog"></div>
+      </div>
+
+      <div class="scroll-area">
+        <p>Scroll down to test the position tracker!</p>
+      </div>
+
+      <div class="floating-scroll">
+        <h4>Position</h4>
+        <div class="scroll-position" id="scrollPosition">Y: 0px</div>
+      </div>
+    </div>
+
+    <script></script>
+  </body>
+  <script src="main.js"></script>
+</html>
